@@ -45,23 +45,22 @@ router.post("/", async (req, res) => {
   }
 });
 
-//TODO Update to async await!
-router.put("/:id", (req, res) => {
+router.put("/:id", async (req, res) => {
   // update a category by its `id` value --- Passed Insomnia Test
-  Category.update(
-    {
-      category_name: req.body.category_name,
-    },
-    {
-      where: {
-        id: req.body.id,
-      },
+  try {
+    const categoryData = await Category.update({
+      where: { id: req.body },
+    });
+
+    if (!categoryData) {
+      res.status(404).json({ message: "No category found with that id!" });
+      return;
     }
-  )
-    .then((updatedCategory) => {
-      res.json(updatedCategory);
-    })
-    .catch((err) => res.json(err));
+
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.delete("/:id", async (req, res) => {
