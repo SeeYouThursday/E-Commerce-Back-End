@@ -21,6 +21,9 @@ Start the server by running `npm start`.
 
 To use this application, run `npm start` to start the server. Use Insomnia Core to test the routes. The routes are GET, POST, PUT, and DELETE for categories, products, and tags.
 
+[Walkthrough Video](https://drive.google.com/file/d/1nnR5eASBHwOQj-0p0sMtJvaEFQDzpWgl/view?usp=sharing)
+[Github Repo](https://github.com/SeeYouThursday/E-Commerce-Back-End)
+
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at [galyenb@vcu.edu](galyenb@vcu.edu).
